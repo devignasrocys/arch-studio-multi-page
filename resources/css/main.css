@@ -93,6 +93,7 @@ body {
     height: 35rem;
     color: var(--very-light-grey);
     position: relative;
+    overflow: hidden;
 }
 
 .hero__content {
@@ -154,7 +155,29 @@ body {
     display: none;
 }
 
+/* CAROUSELE */
+.carousele {
+    height: 35rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.carousele__item {
+    height: 100%;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.carousele__item.active {
+    transition: all 1s ease;
+}
+
 @media screen and (min-width: 768px) {
+    .carousele {
+        height: 45rem;
+    }
     .hero {
         padding: 0 5rem;
         height: 45rem;
