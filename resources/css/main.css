@@ -50,11 +50,13 @@ body {
 /* HEADER */
 .header {
     width: 100%;
+    position: relative;
 }
 
 /* NAV */
 .nav {
     width: 100%;
+    height: 6rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -71,8 +73,9 @@ body {
     right: 0;
     background-color: var(--very-light-grey);
     width: 90%;
-    top: 4.8rem;
+    top: 5.9rem;
     padding: 1rem 2rem;
+    z-index: 10;
 }
 
 .nav__item {
@@ -87,15 +90,24 @@ body {
 
 /* HERO */
 .hero {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('../assets/home/mobile/image-hero-paramour.jpg');
-    background-size: cover;
-    background-color: red;
     height: 35rem;
     color: var(--very-light-grey);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 2rem;
+    position: relative;
+}
+
+.hero__content {
+    position: absolute;
+    top: 8.3125rem;;
+    left: 4rem;
+    transform: -25%;
+    width: 19.4375rem;
+}
+
+.hero__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.5);
 }
 
 .hero__title {
@@ -108,7 +120,7 @@ body {
 }
 
 .hero__btn {
-    margin-top: 3rem;
+    margin-top: 5rem;
     width: 15.75rem;
     height: 4.5rem;
     background-color: var(--vary-dark-blue);
@@ -133,3 +145,70 @@ body {
   margin-left: 2rem;
 }
 
+.page-indicator {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .hero {
+        padding: 0 5rem;
+        height: 45rem;
+    }
+    .hero__content {
+        top: 11.3125rem;
+        width: 454px;
+        left: 10rem;
+    }
+    .hero__title {
+        font-size: var(--heading-l);
+    }
+    .nav {
+        padding: 0 5rem;
+        display: flex;
+        align-items: center;
+    }
+    .nav__hamburger img {
+        display: none;
+    }
+    .nav__list {
+        display: flex;
+        justify-content: flex-end;
+        position: inherit;
+        background-color: inherit;
+    }
+    .nav__item {
+        margin: 0 1rem;
+    }
+    .nav__link {
+        color: var(--medium-grey);
+        font-size: var(--body);
+    }
+    .page-indicator {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 13.5rem;
+        transform: rotate(90deg);
+        top: 5.8rem;
+        left: -4.5rem;
+
+    }
+    .page-indicator__line {
+        width: 4rem;
+        height: 1px;
+        background-color: var(--light-grey);
+    }
+    .page-indicator__page {
+        color: var(--light-grey);
+        letter-spacing: 1rem;
+    }
+}
+    
+@media screen and (min-width: 1024px) {
+
+    .hero__content {
+
+    }
+}
