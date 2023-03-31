@@ -15,7 +15,7 @@
 }
 
 /* GLOBAL */
-* {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -38,6 +38,31 @@ a {
 .hidden {
     display: none;
 }
+
+.btn {
+    margin-top: 5rem;
+    width: 15.75rem;
+    height: 4.5rem;
+    background-color: var(--vary-dark-blue);
+    color: var(--very-light-grey);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: var(--medium-grey);
+    transition: all 0.8s ease;
+}
+
+.btn__icon {
+    filter: invert(1) hue-rotate(175deg);
+    margin-left: 2rem;
+  }
 
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
@@ -120,31 +145,6 @@ body {
     line-height: 1.5rem;
 }
 
-.hero__btn {
-    margin-top: 5rem;
-    width: 15.75rem;
-    height: 4.5rem;
-    background-color: var(--vary-dark-blue);
-    color: var(--very-light-grey);
-    border: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-}
-
-.hero__btn:hover {
-    background-color: var(--medium-grey);
-    transition: all 0.8s ease;
-}
-
-.hero__icon {
-  filter: invert(1) hue-rotate(175deg);
-  margin-left: 2rem;
-}
-
 /* PAGE INDICATOR */
 .page-indicator {
     display: none;
@@ -173,6 +173,71 @@ body {
 .carousele__item.active {
     transition: all 1s ease;
 }
+
+/* WELCOME SECTION */
+.welcome {
+    max-width: 100%;
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+    margin: 0 3rem;
+    position: relative;
+}
+
+.welcome:before {
+    position: absolute;
+    top: 4rem;
+    content: '';
+    width: 4rem;
+    height: .1rem;
+    background-color: var(--light-grey);
+
+}
+
+.welcome__title {
+    font-size: var(--heading-m);
+    margin-bottom: 1rem;
+    color: var(--vary-dark-blue);
+}
+
+.welcome__p {
+    line-height: 1.5rem;;
+}
+.welcome__welcome {
+    display: none;
+}
+
+/* SMALL TEAMS SECTION */
+.small-teams {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    max-width: 100%;
+    position: relative;
+}
+
+.small-teams__text-content {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 60%;
+}
+
+.small-teams__title {
+    font-size: 48px;
+    margin-bottom: 1rem;
+    color: var(--very-light-grey);
+}
+
+.small-teams__img {
+    display: block;
+    width: 100%;
+    filter: brightness(0.5);
+}
+
+.small-teams .btn {
+    margin-top: 1rem;
+}
+
+/*  */
 
 @media screen and (min-width: 768px) {
     .carousele {
@@ -232,6 +297,23 @@ body {
         color: var(--light-grey);
         letter-spacing: 1rem;
     }
+    .welcome {
+        margin: 0 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .welcome:before {
+        display: none;
+    }
+    .welcome__welcome {
+        display: block;
+        font-size: 128px;
+        color: var(--very-light-grey);
+    }
+    .small-teams {
+        margin: 0 5rem;
+    }
 }
     
 @media screen and (min-width: 1024px) {
@@ -272,4 +354,26 @@ body {
         background-color: var(--vary-dark-blue);
         color: var(--very-light-grey);
     }
+    .welcome__welcome {
+        font-size: 178px;
+        z-index: 100;
+        margin-left: 10rem;
+    }
+    .welcome__text-content {
+        width: 27.875rem;
+        margin-left: 8rem;
+        margin-top: 0;
+    }
+    .welcome__text-content:before {
+        top: 13.5rem;
+        left: 68%;
+        position: absolute;
+        content: '';
+        width: 21.875rem;
+        height: 35rem;
+        background-image: url('../assets/home/desktop/image-welcome.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
 }
