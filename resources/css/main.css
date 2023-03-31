@@ -34,6 +34,10 @@ a {
     text-decoration: none;
 }
 
+picture {
+    display: block;
+}
+
 /* UTILITY */
 .hidden {
     display: none;
@@ -237,45 +241,123 @@ body {
     margin-top: 1rem;
 }
 
-/*  */
+/* FEATURED SECTION */
+.features {
+    max-width: 100%;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.features__title {
+    width: 90%;
+    font-size: var(--heading-m);
+    color: var(--vary-dark-blue);
+
+}
+
+.features__card {
+    width: 90%;
+    position: relative;
+    margin: 1.2rem 0;
+}
+
+.card__img {
+    display: block;
+    width: 100%;
+    filter: brightness(50%);
+    margin: 0 auto;
+}
+
+.card__text-content {
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+    z-index: 100;
+}
+
+.card__title {
+    color: var(--very-light-grey);
+    margin-bottom: 1rem;
+}
+
+.card__link {
+    color: var(--very-light-grey);
+    font-size: 16px;
+}
+
+.features .btn {
+    margin-top: 1rem;
+    width: 90%;
+}
+
+.card__number {
+    display: none;
+}
+
+.features__row {
+    width: 90%;
+}
+
+.features__row .btn {
+    display: none;
+}
+
+.features__cards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 @media screen and (min-width: 768px) {
     .carousele {
         height: 45rem;
     }
+
     .hero {
         padding: 0 5rem;
         height: 45rem;
     }
+
     .hero__content {
         top: 11.3125rem;
         width: 454px;
         left: 10rem;
     }
+
     .hero__title {
         font-size: var(--heading-l);
     }
+
     .nav {
         padding: 0 5rem;
         display: flex;
         align-items: center;
     }
+
     .nav__hamburger img {
         display: none;
     }
+
     .nav__list {
         display: flex;
         justify-content: flex-end;
         position: inherit;
         background-color: inherit;
     }
+
     .nav__item {
         margin: 0 1rem;
     }
+
     .nav__link {
         color: var(--medium-grey);
         font-size: var(--body);
     }
+
     .page-indicator {
         position: absolute;
         display: flex;
@@ -288,31 +370,66 @@ body {
         left: -4.5rem;
 
     }
+
     .page-indicator__line {
         width: 4rem;
         height: 1px;
         background-color: var(--light-grey);
     }
+
     .page-indicator__page {
         color: var(--light-grey);
         letter-spacing: 1rem;
     }
+
     .welcome {
         margin: 0 5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
+
     .welcome:before {
         display: none;
     }
+
     .welcome__welcome {
         display: block;
         font-size: 128px;
         color: var(--very-light-grey);
     }
+
     .small-teams {
         margin: 0 5rem;
+    }
+
+    .card__number {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 2rem;
+        font-size: 168px;
+        color: var(--very-light-grey);
+        opacity: .6;
+    }
+
+    .features__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .features .btn {
+        display: none;
+    }
+
+    .features__row .btn {
+        display: flex;
+        width: 13rem;
+        margin: 0;
     }
 }
     
@@ -354,16 +471,19 @@ body {
         background-color: var(--vary-dark-blue);
         color: var(--very-light-grey);
     }
+
     .welcome__welcome {
         font-size: 178px;
         z-index: 100;
         margin-left: 10rem;
     }
+
     .welcome__text-content {
         width: 27.875rem;
         margin-left: 8rem;
         margin-top: 0;
     }
+
     .welcome__text-content:before {
         top: 13.5rem;
         left: 68%;
@@ -376,4 +496,21 @@ body {
         background-position: center;
     }
 
+    .features {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .features__cards {
+        flex-direction: row;
+    }
+
+    .features__card {
+        margin: 0 1rem;
+    }
+
+    .card__number {
+        top: 6rem;
+        right: 1rem;
+    }
 }
