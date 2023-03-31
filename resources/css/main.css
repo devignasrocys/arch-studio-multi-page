@@ -140,12 +140,17 @@ body {
 }
 
 .hero__icon {
-  /* or to blue */
   filter: invert(1) hue-rotate(175deg);
   margin-left: 2rem;
 }
 
+/* PAGE INDICATOR */
 .page-indicator {
+    display: none;
+}
+
+/* CAROUSELE INDICATOR */
+.carousele-indicator {
     display: none;
 }
 
@@ -207,8 +212,41 @@ body {
 }
     
 @media screen and (min-width: 1024px) {
-
+    /* HERO */
     .hero__content {
+        top: 8.3125rem;
+        left: 15rem;
+    }
 
+    /* CAROUSELE */
+    .carousele-indicator {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 1rem;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .carousele-indicator__rect {
+        display: inline-block;
+        width: 4rem;
+        height: 4rem;
+        background-color: var(--very-light-grey);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--medium-grey);
+        cursor: pointer;
+    }
+
+    .carousele-indicator__rect:hover {
+        background-color: var(--medium-grey);
+        color: var(--very-light-grey);
+    }
+
+    .carousele-indicator__rect.active {
+        background-color: var(--vary-dark-blue);
+        color: var(--very-light-grey);
     }
 }
